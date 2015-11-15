@@ -1,3 +1,5 @@
+from tester import runtests
+
 def write_zeros(m, p):
     for x in range(0, len(m)):
         m[x][p[1]] = 0
@@ -81,10 +83,4 @@ tests = [
     ]
 ]
 
-for test in tests:
-    zero_matrix(test[0])
-    if test[0] == test[1]:
-        print 'Pass'
-    else:
-        print 'Failure: expected "{}", found "{}"'.format(test[1], test[0])
-
+runtests(tests, zero_matrix, inplace=True)

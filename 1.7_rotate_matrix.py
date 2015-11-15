@@ -1,3 +1,5 @@
+from tester import runtests
+
 def swap_members_inplace(m, p1, p2):
     m[p1[0]][p1[1]] ^= m[p2[0]][p2[1]]
     m[p2[0]][p2[1]] ^= m[p1[0]][p1[1]]
@@ -73,13 +75,4 @@ tests = [
     ]
 ]
 
-for test in tests:
-    rotate_matrix(test[0])
-    if test[0] == test[1]:
-        print 'Pass'
-    else:
-        print 'Failure: expected "{}", found "{}"'.format(test[1], test[0])
-
-
-
-
+runtests(tests, rotate_matrix, inplace=True)

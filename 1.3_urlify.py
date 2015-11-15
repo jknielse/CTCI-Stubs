@@ -1,3 +1,5 @@
+from tester import runtests
+
 def urlify(string):
     # string is a bit of a misnomer, it's actually a list, but w/e.
     read_index = len(string) - 1
@@ -17,11 +19,12 @@ def urlify(string):
         read_index -= 1
 
 
+tests = [
+    [list('this is a url string        '), list('this%20is%20a%20url%20string')],
+    [list('smalltest'), list('smalltest')], 
+    [list(''), list('')], 
+    [list(' b  '), list('%20b')],
+    [list('blarg arg  '), list('blarg%20arg')],
+]
 
-for test in [['this is a url string        ', 'this%20is%20a%20url%20string'], ['smalltest', 'smalltest'], ['', ''], ['blarg arg  ', 'blarg%20arg']]:
-    var = list(test[0])
-    urlify(var)
-    if test[1] == ''.join(var):
-        print 'Pass'
-    else:
-        print 'Failure: expected "{}", got "{}"'.format(test[1], ''.join(var))
+runtests(tests, urlify, inplace=True)

@@ -1,3 +1,4 @@
+from tester import runtests
 from collections import defaultdict
 
 def str_to_dict(string):
@@ -10,6 +11,14 @@ def check_permutation(str1, str2):
     return str_to_dict(str1) == str_to_dict(str2)
 
 
-for test in [['thing', 'thang'], ['thing', 'ting'], ['thing', 'thing'], ['thing', 'gnith']]:
-    print '{} {}'.format(*test)
-    print check_permutation(*test)
+tests = [
+    [['thing', 'thang'], False],
+    [['thing', 'ting'], False],
+    [['thing', 'thing'], True],
+    [['thing', 'gnith'], True],
+    [['', ''], True],
+    [['', 'blarg'], False],
+    [['blarggg', 'blarg'], False],
+]
+
+runtests(tests, check_permutation)

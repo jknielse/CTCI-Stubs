@@ -1,3 +1,4 @@
+from tester import runtests
 
 def is_unique(astring):
     letter_set = set()
@@ -7,7 +8,13 @@ def is_unique(astring):
         letter_set.add(letter)
     return True
 
+tests = [
+    [['this'], True],
+    [['abcdefgh'], True],
+    [['abcdefgha'], False],
+    [['HAha'], True],
+    [['blarg'], True],
+    [['letters'], False],
+]
 
-for test in ['this', 'abcdefgh', 'abcdefgha', 'HAha', 'blarg', 'letters']:
-    print 'Checking "{}"'.format(test)
-    print is_unique(test)
+runtests(tests, is_unique)

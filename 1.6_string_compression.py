@@ -1,3 +1,5 @@
+from tester import runtests
+
 def string_compress(string):
     """
     replaces runs of characters with the character followed by the number
@@ -20,9 +22,13 @@ def string_compress(string):
         return newstring
     return string
 
+tests = [
+    [['abcdef'], 'abcdef'], 
+    [['aaaaaaa'], 'a7'],
+    [['aaabbbb'], 'a3b4'],
+    [[''], ''],
+    [['aaabbbabcdefg'], 'aaabbbabcdefg'],
+    [['aaabbbabcdefgggggggggggggggggggggggg'], 'a3b3a1b1c1d1e1f1g24'],
+]
 
-for test in [['abcdef', 'abcdef'], ['aaaaaaa', 'a7'], ['aaabbbb', 'a3b4'], ['', ''], ['aaabbbabcdefg', 'aaabbbabcdefg']]:
-    if test[1] == string_compress(test[0]):
-        print 'Pass'
-    else:
-        print 'Failure: expected "{}", got "{}"'.format(test[1], string_compress(test[0]))
+runtests(tests, string_compress)

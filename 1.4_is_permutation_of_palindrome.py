@@ -1,3 +1,4 @@
+from tester import runtests
 from collections import defaultdict
 
 def str_to_dict(string):
@@ -19,8 +20,14 @@ def is_permutation_of_plaindrome(string):
                 had_odd = True
     return True
 
-for test in [['tact coa', True], ['grad drag', True], ['WAAARGARBLL', False], ['', True], ['r', True], ['r ', True], ['rb', False]]:
-    if is_permutation_of_plaindrome(test[0]) == test[1]:
-        print 'Pass'
-    else:
-        print 'Failure: expected "{}", got "{}"'.format(test[1], is_permutation_of_plaindrome(test[0]))
+tests = [
+    [['tact coa'], True], 
+    [['grad drag'], True],
+    [['WAAARGARBLL'], False],
+    [[''], True],
+    [['r'], True],
+    [['r '], True],
+    [['rb'], False],
+]
+
+runtests(tests, is_permutation_of_plaindrome)
