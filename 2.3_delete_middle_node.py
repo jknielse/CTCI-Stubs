@@ -17,6 +17,7 @@ tests = [
 for test in tests:
     first_ll = linkedlist_from_list(test[0])
     pointer = first_ll
-    for i in range(0, test[1] - 1):
+    for i in range(0, test[1]):
         pointer = pointer.n
+    delete_middle_node(pointer)
     _assert_equal(linkedlist_from_list(test[2]), first_ll)
