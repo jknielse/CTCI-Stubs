@@ -1,11 +1,15 @@
 from tester import runtests
+from collections import defaultdict
 
-# check_permutation should return true if str1 is a permutation of str2
-# a permutation means that the letters are all the same, but may be rearanged.
+def str_to_dict(string):
+    d = defaultdict(int)
+    for char in string:
+        d[char] += 1
+    return d
 
 def check_permutation(str1, str2):
-    # Your code here
-    pass
+    return str_to_dict(str1) == str_to_dict(str2)
+
 
 tests = [
     [['thing', 'thang'], False],

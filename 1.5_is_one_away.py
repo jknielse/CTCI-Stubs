@@ -1,11 +1,20 @@
 from tester import runtests
 
-# is_one_away should return true if str1 can be modified to be equal to str2
-# using only one insertion, one deletion, or one modification (of one character).
+def prune_same(str1, str2):
+    i = 0
+    end = min(len(str1), len(str2))
+    while (i < end and str1[i] == str2[i]):
+        i += 1
+
+    return (str1[i:], str2[i:])
+
 
 def is_one_away(str1, str2):
-    # Your code here
-    pass
+    (newstr1, newstr2) = prune_same(list(str1), list(str2))
+    newstr1.reverse()
+    newstr2.reverse()
+    (newstr1, newstr2) = prune_same(''.join(newstr1), ''.join(newstr2))
+    return abs(len(newstr2) - len(newstr1)) <= 1
 
 tests = [
     [['blarg', 'blarg'], True],

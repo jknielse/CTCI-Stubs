@@ -1,10 +1,12 @@
 from tester import runtests
 
-# is_unique should return true if there are no duplicate characters in astring
-
 def is_unique(astring):
-    # Your code here
-    pass
+    letter_set = set()
+    for letter in astring:
+        if letter in letter_set:
+            return False
+        letter_set.add(letter)
+    return True
 
 tests = [
     [['this'], True],
@@ -13,7 +15,6 @@ tests = [
     [['HAha'], True],
     [['blarg'], True],
     [['letters'], False],
-    [[''], True],
 ]
 
 runtests(tests, is_unique)

@@ -1,11 +1,22 @@
 from tester import runtests
 
-# zero_matrix takes a matrix m (similar to the previous question), and modifies
-# it inplace to zero-out any rows and columns that had a zero on them.
+def write_zeros(m, p):
+    for x in range(0, len(m)):
+        m[x][p[1]] = 0
+    for y in range(0, len(m)):
+        m[p[0]][y] = 0
+
 
 def zero_matrix(m):
-    # Your code here
-    pass
+    zero_points = []
+    for x in range(0, len(m)):
+        for y in range(0, len(m)):
+            if m[x][y] == 0:
+                zero_points.append([x, y])
+    for point in zero_points:
+        write_zeros(m, point)
+
+
 
 tests = [
     [

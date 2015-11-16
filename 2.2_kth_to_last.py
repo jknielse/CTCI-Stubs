@@ -1,10 +1,7 @@
 from linkedlist import linkedlist_from_list
 from tester import runtests
 
-# kth_from_last should return the k-th-from-last element in the linked list ll.
-
 def kth_from_last(k, ll):
-    # Your code here
     pass
 
 tests = [
