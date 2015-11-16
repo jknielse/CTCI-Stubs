@@ -1,5 +1,10 @@
 from tester import runtests
 
+# A rotated string is a string that has been scrolled in a direction with
+# wrap-around. (see below for examples.)
+# Implement is_rotation such that it uses the is_substring function exactly
+# once to determine whether s1 is a rotation of s2.
+
 def is_rotation(s1, s2):
     # This is gross. What is the correct way to do this?
     global used_once
@@ -12,7 +17,7 @@ def is_rotation(s1, s2):
             return s1 in s2
         raise Exception('Cheater cheater pumkin eater')
 
-    return len(s1) == len(s2) and is_substring(s2, s1 + s1)
+    # Your code here
 
 
 tests = [

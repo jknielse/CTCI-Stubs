@@ -1,24 +1,15 @@
 from tester import runtests
 from collections import defaultdict
 
-def str_to_dict(string):
-    d = defaultdict(int)
-    for char in string:
-        d[char] += 1
-    return d
+# is_permutation_of_plaindrome should return true if string can be permuted
+# into a palindrome
+# (A palindrome is a sentence/word that reads the same backwards and forwards)
+# (for example, taco cat)
+# Whitespace can be ignored.
 
-def is_permutation_of_plaindrome(string):
-    newstring = string.replace(' ', '')
-    d = str_to_dict(newstring)
-    had_odd = False
-    for k in d:
-        v = d[k]
-        if v % 2 == 1:
-            if had_odd:
-                return False
-            else:
-                had_odd = True
-    return True
+def is_permutation_of_palindrome(string):
+    # Your code here
+    pass
 
 tests = [
     [['tact coa'], True], 
@@ -30,4 +21,4 @@ tests = [
     [['rb'], False],
 ]
 
-runtests(tests, is_permutation_of_plaindrome)
+runtests(tests, is_permutation_of_palindrome)

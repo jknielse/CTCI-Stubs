@@ -1,26 +1,14 @@
 from tester import runtests
 
-def string_compress(string):
-    """
-    replaces runs of characters with the character followed by the number
-    of character. If that would be longer than the original string, then
-    it returns the original string.
-    """
-    
-    newstring = ''
-    i = 0
-    
-    while i < len(string):
-        cur_char = string[i]
-        counter = 0
-        while i < len(string) and string[i] == cur_char:
-            counter += 1
-            i += 1
-        newstring += '{}{}'.format(cur_char, counter)
+# string_compress should return a string that has had any runs of letters
+# condensed into just that letter, followed by the number of that letter.
+# for example, 'aaaaaaa' -> 'a7', 'aaabbbb' -> 'a3b4'
+# If the "compressed" string is larger than the original string,
+# the function should instead return the original string.
 
-    if len(newstring) < len(string):
-        return newstring
-    return string
+def string_compress(string):
+    # Your code here
+    pass
 
 tests = [
     [['abcdef'], 'abcdef'], 

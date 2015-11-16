@@ -1,27 +1,11 @@
 from tester import runtests
 
-def swap_members_inplace(m, p1, p2):
-    m[p1[0]][p1[1]] ^= m[p2[0]][p2[1]]
-    m[p2[0]][p2[1]] ^= m[p1[0]][p1[1]]
-    m[p1[0]][p1[1]] ^= m[p2[0]][p2[1]]
-
-def rotate_point(p, length):
-    return (length - 1 - p[1], p[0])
-
-def find_rotation_points(p, length):
-    return_points = []
-    return_points.append(p)
-    for i in range(0, 3):
-        return_points.append(rotate_point(return_points[-1], length))
-
-    return return_points
+# rotate_matrix takes a 2-nested list representing a square matrix, and modify
+# the numbers inplace to rotate the matrix by 90 degrees clockwise.
 
 def rotate_matrix(m):
-    for x in range(0, len(m)/2):
-        for y in range(0, (len(m)+1)/2):
-            rpoints = find_rotation_points((x, y), len(m))
-            for i in range(0, 3):
-                swap_members_inplace(m, rpoints[i], rpoints[i + 1])
+    # Your code here
+    pass
 
 
 tests = [
