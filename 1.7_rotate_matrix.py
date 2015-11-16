@@ -1,5 +1,8 @@
 from tester import runtests
 
+# rotate_matrix takes a 2-nested list representing a square matrix, and modifies
+# the numbers inplace to rotate the matrix by 90 degrees clockwise.
+
 def swap_members_inplace(m, p1, p2):
     m[p1[0]][p1[1]] ^= m[p2[0]][p2[1]]
     m[p2[0]][p2[1]] ^= m[p1[0]][p1[1]]
