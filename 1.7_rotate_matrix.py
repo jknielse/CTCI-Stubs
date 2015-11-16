@@ -1,6 +1,6 @@
 from tester import runtests
 
-# rotate_matrix takes a 2-nested list representing a square matrix, and modify
+# rotate_matrix takes a 2-nested list representing a square matrix, and modifies
 # the numbers inplace to rotate the matrix by 90 degrees clockwise.
 
 def rotate_matrix(m):
