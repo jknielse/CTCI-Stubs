@@ -5,8 +5,8 @@ from linkedlist import linkedlist_from_list
 # both a parent, and a child.
 
 def delete_middle_node(node):
-    # Your code here
-    pass
+    node.val = node.n.val
+    node.n = node.n.n
 
 tests = [
     [[1, 2, 3, 4, 5], 2, [1, 2, 4, 5]],
@@ -17,6 +17,7 @@ tests = [
 for test in tests:
     first_ll = linkedlist_from_list(test[0])
     pointer = first_ll
-    for i in range(0, test[1] - 1):
+    for i in range(0, test[1]):
         pointer = pointer.n
+    delete_middle_node(pointer)
     _assert_equal(linkedlist_from_list(test[2]), first_ll)
