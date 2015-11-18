@@ -9,11 +9,11 @@ def urlify(lstring):
     pass
 
 tests = [
-    [list('this is a url string        '), list('this%20is%20a%20url%20string')],
-    [list('smalltest'), list('smalltest')], 
-    [list(''), list('')], 
-    [list(' b  '), list('%20b')],
-    [list('blarg arg  '), list('blarg%20arg')],
+    [[list('this is a url string        ')], list('this%20is%20a%20url%20string')],
+    [[list('smalltest')], list('smalltest')], 
+    [[list('')], list('')], 
+    [[list(' b  ')], list('%20b')],
+    [[list('blarg arg  ')], list('blarg%20arg')],
 ]
 
 runtests(tests, urlify, inplace=True)
