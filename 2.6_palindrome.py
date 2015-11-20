@@ -4,8 +4,19 @@ from tester import runtests
 # palindrome should return True if ll represents a palindrome.
 
 def palindrome(ll):
-    # Your code here
-    pass
+    saved_values = []
+    cursor = ll
+    while cursor:
+        saved_values.append(cursor.val)
+        cursor = cursor.n
+
+    cursor = ll
+    while cursor:
+        if cursor.val != saved_values.pop():
+            return False
+        cursor = cursor.n
+
+    return True
 
 tests = [
     [[linkedlist_from_list([1, 2, 3, 2, 1])], True],
