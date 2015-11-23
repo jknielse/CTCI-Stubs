@@ -15,7 +15,7 @@ test2 = linkedlist_from_list([1, 2, 3, 4, 5])
 test2.n.n.n.n = test2
 
 test3 = linkedlist_from_list([1, 2, 3, 4])
-test2.n.n.n = test3
+test3.n.n.n = test3
 
 test4 = linkedlist_from_list([1, 2, 3, 4])
 test4.n.n.n = test4.n.n
