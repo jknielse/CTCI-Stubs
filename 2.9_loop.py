@@ -5,8 +5,14 @@ from tester import runtests
 # That is, if any node in the linked list points to a node earlier in the list (or itself).
 
 def is_loop(ll):
-    # Your code here
-    pass
+    p1 = ll
+    p2 = ll
+    while p1 and p1.n:
+        p1 = p1.n.n
+        p2 = p2.n
+        if p1 is p2:
+            return True
+    return False
 
 test1 = linkedlist_from_list([1])
 test1.n = test1
