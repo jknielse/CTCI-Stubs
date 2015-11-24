@@ -1,6 +1,7 @@
 from tester import runtests
 from stack import Stack
 
+
 # implement a data structure called SetOfStacks.
 # SetOfStacks should be composed of several stacks
 # and create a new stack once the stack reaches a
@@ -10,22 +11,30 @@ from stack import Stack
 
 class SetOfStacks(object):
     def __init__(self):
-        # Your code here
-        pass
+        self._count = 0
+        self._stacks = []
 
     def push(self, item):
-        # Your code here
-        pass
+        if (self._count % 4) == 0:
+            self._stacks.append(Stack())
+        self._stacks[-1].push(item)
+        self._count += 1
 
     def pop(self):
-        # Your code here
-        pass
+        if self._count:
+            self._count -= 1
+            val = self._stacks[-1].pop()
+            if (self._count % 4) == 0:
+                self._stacks.pop(-1)
+            return val
+        return None
 
     def number_of_stacks(self):
         # this should return the number of stacks that
         # are being used within this object. (This is used
         # to test that your stack allocation is correct)
-        pass
+
+        return len(self._stacks)\
 
 
 # This expects to be passed a list of integers and 'p's.
